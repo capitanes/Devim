@@ -90,7 +90,9 @@ def create_delinquency_trend_chart(df):
                 yref="paper",
                 x=0.5,
                 y=-0.15,
-                font=dict(size=12)
+                font=dict(size=14),
+                xanchor='center',
+                yanchor='bottom'
             )
         ]
     )
