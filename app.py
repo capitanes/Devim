@@ -40,10 +40,15 @@ st.markdown("Analyze credit loan payment behaviors and delinquency patterns")
 # Sidebar for data upload and filtering
 st.sidebar.header("Data Upload")
 
-# File uploaders
-orders_file = st.sidebar.file_uploader("Upload Orders CSV", type=["csv"])
-plan_file = st.sidebar.file_uploader("Upload Payment Plan CSV", type=["csv"])
-payments_file = st.sidebar.file_uploader("Upload Actual Payments CSV", type=["csv"])
+# Default file paths
+default_orders_file = "data/orders.csv"
+default_plan_file = "data/plan.csv"
+default_payments_file = "data/payments.csv"
+
+# File uploaders with default files
+orders_file = st.sidebar.file_uploader("Upload Orders CSV", type=["csv"]) or default_orders_file
+plan_file = st.sidebar.file_uploader("Upload Payment Plan CSV", type=["csv"]) or default_plan_file
+payments_file = st.sidebar.file_uploader("Upload Actual Payments CSV", type=["csv"]) or default_payments_file
 
 # Initialize session state for storing dataframes
 if 'orders_df' not in st.session_state:
