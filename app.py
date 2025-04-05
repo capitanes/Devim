@@ -41,9 +41,9 @@ st.markdown("Analyze credit loan payment behaviors and delinquency patterns")
 st.sidebar.header("Data Upload")
 
 # Default file paths
-default_orders_file = "data/orders.csv"
-default_plan_file = "data/plan.csv"
-default_payments_file = "data/payments.csv"
+default_orders_file = "https://github.com/capitanes/Devim/blob/main/data/orders.csv"
+default_plan_file = "https://github.com/capitanes/Devim/blob/main/data/plan.csv"
+default_payments_file = "https://github.com/capitanes/Devim/blob/main/data/payments.csv"
 
 # File uploaders with default files
 orders_file = st.sidebar.file_uploader("Upload Orders CSV", type=["csv"]) or default_orders_file
