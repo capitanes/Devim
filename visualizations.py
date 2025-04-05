@@ -304,6 +304,12 @@ def create_delinquency_heatmap(df):
     
     # Apply the function to create loan amount ranges
     heatmap_df['loan_amount_range'] = heatmap_df['issued_sum'].apply(get_loan_range)
+
+    heatmap_df['loan_amount_range'] = pd.Categorical(
+    heatmap_df['loan_amount_range'],
+    categories=['0-1K', '1K-2K', '2K-5K', '5K-10K', '10K+'],
+    ordered=True
+    )
     
     # Create a pivot table for the heatmap
     heatmap_pivot = pd.pivot_table(
