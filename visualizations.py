@@ -193,7 +193,7 @@ def create_payment_behavior_chart(df):
         index='month',
         columns='payment_status',
         aggfunc='count',
-        fill_value=0,
+        fill_value=100,
         observed=True  # Add observed=True to resolve FutureWarning
     ).reset_index()
     
