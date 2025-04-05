@@ -43,9 +43,9 @@ st.sidebar.header("Data Upload")
 import os
 
 # Default file paths
-default_orders_file_path = "path/to/default/orders.csv"
-default_plan_file_path = "path/to/default/plan.csv"
-default_payments_file_path = "path/to/default/payments.csv"
+default_orders_file_path = "https://github.com/capitanes/Devim/blob/main/data/orders.csv"
+default_plan_file_path = "https://github.com/capitanes/Devim/blob/main/data/plan.csv"
+default_payments_file_path = "https://github.com/capitanes/Devim/blob/main/data/payments.csv"
 
 # Function to read default file if uploader is not used
 def read_default_file(file_path):
