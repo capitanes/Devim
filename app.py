@@ -40,24 +40,10 @@ st.markdown("Analyze credit loan payment behaviors and delinquency patterns")
 # Sidebar for data upload and filtering
 st.sidebar.header("Data Upload")
 
-import os
-
-# Default file paths
-default_orders_file_path = "https://github.com/capitanes/Devim/blob/main/data/orders.csv"
-default_plan_file_path = "https://github.com/capitanes/Devim/blob/main/data/plan.csv"
-default_payments_file_path = "https://github.com/capitanes/Devim/blob/main/data/payments.csv"
-
-# Function to read default file if uploader is not used
-def read_default_file(file_path):
-    if os.path.exists(file_path):
-        with open(file_path, 'rb') as f:
-            return f.read()
-    return None
-
-# File uploaders with default files
-orders_file = read_default_file(default_orders_file_path)
-plan_file = read_default_file(default_plan_file_path)
-payments_file = read_default_file(default_payments_file_path)
+# File uploaders
+orders_file = st.sidebar.file_uploader("Upload Orders CSV", type=["csv"])
+plan_file = st.sidebar.file_uploader("Upload Payment Plan CSV", type=["csv"])
+payments_file = st.sidebar.file_uploader("Upload Actual Payments CSV", type=["csv"])
 
 # Initialize session state for storing dataframes
 if 'orders_df' not in st.session_state:
